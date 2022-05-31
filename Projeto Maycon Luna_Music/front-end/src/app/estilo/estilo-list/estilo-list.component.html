@@ -1,0 +1,45 @@
+<h1>Estilos</h1>
+
+<mat-toolbar class="list-toolbar">
+  <a mat-raised-button color="accent" [routerLink]="['/estilo/novo']">
+    <mat-icon>add_circle</mat-icon>
+    <span class="separador10"></span>
+    <span>Novo estilo</span>
+  </a>
+</mat-toolbar>
+
+<table mat-table mat-table-responsive [dataSource]="estilos" class="mat-elevation-z5">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Coluna "descricao" -->
+  <ng-container matColumnDef="descricao">
+    <th mat-header-cell *matHeaderCellDef> Descrição </th>
+    <td mat-cell *matCellDef="let estilo"> {{estilo.descricao}} </td>
+  </ng-container>
+
+  <!-- Coluna "editar" -->
+  <ng-container matColumnDef="editar">
+    <th mat-header-cell *matHeaderCellDef> Editar </th>
+    <td mat-cell *matCellDef="let estilo">
+      <a mat-raised-button [routerLink]="['/estilo', estilo._id]">
+        <mat-icon>edit</mat-icon>
+      </a>
+    </td>
+  </ng-container>
+
+  <!-- Coluna "excluir" -->
+  <ng-container matColumnDef="excluir">
+    <th mat-header-cell *matHeaderCellDef> Excluir </th>
+    <td mat-cell *matCellDef="let estilo">
+      <button mat-raised-button color="warn" (click)="excluir(estilo._id)">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </td>
+  </ng-container>  
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

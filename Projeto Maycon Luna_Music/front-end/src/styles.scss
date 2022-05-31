@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-table {
+   width: 100%;
+}
+
+.mat-table .mat-row .mat-raised-button {
+   opacity: 0.3;
+}
+
+.mat-table .mat-row:hover .mat-raised-button {
+   opacity: 1;
+}
+
+.separador10 {
+   margin-right: 10px;
+}
+
+.separador20 {
+   margin-right: 20px;
+}
+
+.list-toolbar {
+   margin-bottom: 20px;
+   background: transparent;
+   padding-left: 0 !important;
+}
+
+.mat-form-field {
+   width: 100%;
+}
+
+.form-toolbar {
+   background: transparent;
+   justify-content: center;
+}
+
+.align-right {
+   text-align: right !important;
+   padding-right: 24px !important;
+}

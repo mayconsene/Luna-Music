@@ -1,0 +1,160 @@
+<h1>{{ titulo }}</h1>
+
+<form #form="ngForm">
+
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput maxlength="20"
+      placeholder="Informe o nome do Músico" 
+      required 
+      name="nome" 
+      [(ngModel)]="musico.nome" 
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput maxlength="20"
+      placeholder="Informe um email válido" 
+      required 
+      name="email" 
+      [(ngModel)]="musico.email" 
+    />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Usuário</mat-label>
+      <input matInput maxlength="10"
+        placeholder="Informe um nome de usuário" 
+        required 
+        name="usuario" 
+        [(ngModel)]="musico.usuario" 
+      />
+
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput maxlength="10"
+          placeholder="Crie uma nova senha" 
+          required 
+          name="senha" 
+          [(ngModel)]="musico.senha" 
+        />
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput 
+            [matDatepicker]="data_nascimento" 
+            placeholder="Informe a data de Nascimento" 
+            name="data_nascimento"
+            [(ngModel)]="musico.data_nascimento"
+          >
+          <mat-datepicker-toggle matSuffix [for]="dataNascimento">
+          </mat-datepicker-toggle>
+          <mat-datepicker #dataNascimento></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Categoria</mat-label>
+          <mat-select placeholder="Escolha uma Categoria" required
+            name="categoria" [(ngModel)]="musico.categoria">
+            <!-- Preenchimento da lista do combobox -->
+            <mat-option *ngFor="let categoria of categorias" [value]="categoria._id">
+              {{ categoria.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>  
+
+        <mat-form-field>
+          <mat-label>Instrumento</mat-label>
+          <mat-select placeholder="Escolha um Instrumento" required
+            name="instrumento" [(ngModel)]="musico.instrumento">
+            <!-- Preenchimento da lista do combobox -->
+            <mat-option *ngFor="let instrumento of instrumentos" [value]="instrumento._id">
+              {{ instrumento.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> 
+
+        <mat-form-field>
+          <mat-label>Estilo</mat-label>
+          <mat-select placeholder="Escolha um Estilo" required
+            name="estilo" [(ngModel)]="musico.estilo">
+            <!-- Preenchimento da lista do combobox -->
+            <mat-option *ngFor="let estilo of estilos" [value]="estilo._id">
+              {{ estilo.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> 
+
+        <mat-form-field>
+          <mat-label>Outras Habilidades</mat-label>
+          <input matInput maxlength="10"
+            placeholder="Cite outras Habilidades" 
+            required 
+            name="outras_habilidades" 
+            [(ngModel)]="musico.outras_habilidades" 
+          />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Telefone</mat-label>
+            <input matInput maxlength="10"
+              placeholder="Telefone para contato" 
+              required 
+              name="telefone" 
+              [(ngModel)]="musico.telefone" 
+            />
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Celular</mat-label>
+              <input matInput maxlength="10"
+                placeholder="Celular para contato" 
+                required 
+                name="celular" 
+                [(ngModel)]="musico.celular" 
+              />
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Outros Contatos</mat-label>
+                <input matInput maxlength="10"
+                  placeholder="Outros números para contato" 
+                  required 
+                  name="outros_contatos" 
+                  [(ngModel)]="musico.outros_contatos" 
+                />
+                </mat-form-field>
+
+                <mat-form-field>
+                  <mat-label>Foto do Perfil</mat-label>
+                  <input matInput maxlength="10"
+                    placeholder="Insira uma foto do Perfil" 
+                    required 
+                    name="foto_perfil" 
+                    [(ngModel)]="musico.foto_perfil" 
+                  />
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Observações</mat-label>
+                    <input matInput maxlength="10"
+                      placeholder="Fale um pouco sobre você" 
+                      required 
+                      name="observacoes" 
+                      [(ngModel)]="musico.observacoes" 
+                    />
+                    </mat-form-field>
+</form>
+
+<mat-toolbar class="form-toolbar">
+  <button mat-raised-button color="accent" (click)="salvar()">
+    Salvar
+  </button>
+  <span class="separador20"></span>
+  <button mat-raised-button (click)="voltar(form)">
+    Voltar
+  </button>
+</mat-toolbar>

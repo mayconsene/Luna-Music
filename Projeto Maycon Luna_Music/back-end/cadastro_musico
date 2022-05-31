@@ -1,0 +1,101 @@
+{
+
+      "nome": "Maycon Moraes Sene",
+      "email": "mayconmoraessene@gmail.com",
+      "usuario": "mayconsene",
+      "senha": "123456",
+      "data_nascimento": "1982-01-18",
+      "categoria": "id",
+      "instrumento": "id",
+      "estilo": "id",
+      "outras_habilidades": "cantor",
+      "telefone": "16988722062",
+      "celular": "16988722062",
+      "outros_contatos": "nao tem" ,
+      "foto_perfil": "lindao",
+      "observacoes": "show de bola"
+
+}
+
+{
+
+      "nome": "Cleonice Fatima Ferreira",
+      "email": "cleonicefferreira@yahoo.com.br",
+      "usuario": "cleoniceferreira",
+      "senha": "123456",
+      "data_nascimento": "1964-11-21",
+      "categoria": "id",
+      "instrumento": "id",
+      "estilo": "id",
+      "outras_habilidades": "cantora",
+      "telefone": "16988722062",
+      "celular": "16988722062",
+      "outros_contatos": "nao tem" ,
+      "foto_perfil": "lindona",
+      "observacoes": "show de bola"
+
+}
+
+{
+
+      "nome": "Renato Moraes Ferreira Sene",
+      "email": "renatosene2005@yahoo.com.br",
+      "usuario": "renatosene",
+      "senha": "123456",
+      "data_nascimento": "2005-06-17",
+      "categoria": "id",
+      "instrumento": "id",
+      "estilo": "id",
+      "outras_habilidades": "dj",
+      "telefone": "16988722062",
+      "celular": "16988722062",
+      "outros_contatos": "nao tem" ,
+      "foto_perfil": "lindinho",
+      "observacoes": "show de bola"
+
+}
+
+{
+//cadastrar categoria
+    "descricao": "teclas",
+}
+
+{
+//cadastrar categoria
+    "descricao": "cordas",
+}
+
+{
+//cadastrar categoria
+    "descricao": "sopro",
+}
+
+{
+//cadastrar instrumento
+    "descricao": "piano",
+}
+
+{
+//cadastrar instrumento
+    "descricao": "violao",
+}
+
+{
+//cadastrar instrumento
+    "descricao": "saxofone",
+}
+
+{
+//cadastrar estilo
+    "descricao": "classico",
+}
+
+{
+//cadastrar estilo
+    "descricao": "rock",
+}
+
+{
+//cadastrar estilo
+    "descricao": "pagode",
+}

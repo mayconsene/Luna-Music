@@ -1,0 +1,130 @@
+<h1>{{ titulo }}</h1>
+
+<form #form="ngForm">
+
+  <mat-form-field>
+    <mat-label>Modelo</mat-label>
+    <mat-select placeholder="Escolha um modelo" required
+      name="modelo" [(ngModel)]="veiculo.modelo">
+      <!-- Preenchimento da lista do combobox -->
+      <mat-option *ngFor="let modelo of modelos" [value]="modelo._id">
+        {{ modelo.marca.nome}} {{ modelo.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Ano de fabricação</mat-label>
+    <input matInput type="number"
+      min="1900" max="{{ anoAtual }}" 
+      placeholder="Informe o ano de fabricação do veículo" 
+      required 
+      name="ano_fabricacao" 
+      [(ngModel)]="veiculo.ano_fabricacao" 
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Ano do modelo</mat-label>
+    <input matInput type="number"
+      min="1900" max="{{ anoAtual + 1 }}" 
+      placeholder="Informe o ano do modelo" 
+      required 
+      name="ano_modelo" 
+      [(ngModel)]="veiculo.ano_modelo" 
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cor</mat-label>
+    <mat-select placeholder="Escolha uma cor" required
+      name="cor" [(ngModel)]="veiculo.cor">
+      <!-- Preenchimento da lista do combobox -->
+      <mat-option *ngFor="let cor of cores" [value]="cor._id">
+        {{ cor.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>  
+
+  <mat-form-field>
+    <mat-label>Combustível</mat-label>
+    <mat-select placeholder="Escolha um combustível" required
+      name="combustivel" [(ngModel)]="veiculo.combustivel">
+      <!-- Preenchimento da lista do combobox -->
+      <mat-option *ngFor="let combustivel of combustiveis" [value]="combustivel._id">
+        {{ combustivel.descricao }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Placa</mat-label>
+    <input matInput maxlength="8"
+      placeholder="Informe a placa no formato AAA-0000" 
+      required 
+      name="placa" 
+      [(ngModel)]="veiculo.placa" 
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Valor de compra</mat-label>
+    <mat-icon matPrefix>attach_money</mat-icon>
+    <input matInput type="number"
+      step="1"
+      placeholder="Informe o valor de compra do veículo" 
+      required 
+      name="valor_compra" 
+      [(ngModel)]="veiculo.valor_compra" 
+    />
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Data da compra</mat-label>
+    <input matInput 
+      [matDatepicker]="dataCompra" 
+      placeholder="Informe a data de compra" 
+      required 
+      name="data_compra"
+      [(ngModel)]="veiculo.data_compra"
+    >
+    <mat-datepicker-toggle matSuffix [for]="dataCompra">
+    </mat-datepicker-toggle>
+    <mat-datepicker #dataCompra></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Valor de venda</mat-label>
+    <mat-icon matPrefix>attach_money</mat-icon>
+    <input matInput type="number"
+      step="1"
+      placeholder="Informe o valor de venda do veículo" 
+      name="valor_venda" 
+      [(ngModel)]="veiculo.valor_venda" 
+    />
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Data da venda</mat-label>
+    <input matInput 
+      [matDatepicker]="dataVenda" 
+      placeholder="Informe a data de venda" 
+      name="data_venda"
+      [(ngModel)]="veiculo.data_venda"
+    >
+    <mat-datepicker-toggle matSuffix [for]="dataVenda">
+    </mat-datepicker-toggle>
+    <mat-datepicker #dataVenda></mat-datepicker>
+  </mat-form-field>
+
+</form>
+
+<mat-toolbar class="form-toolbar">
+  <button mat-raised-button color="accent" (click)="salvar()">
+    Salvar
+  </button>
+  <span class="separador20"></span>
+  <button mat-raised-button (click)="voltar(form)">
+    Voltar
+  </button>
+</mat-toolbar>
